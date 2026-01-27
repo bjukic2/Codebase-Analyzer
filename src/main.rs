@@ -6,16 +6,16 @@ mod walker;
 use parser::typescript::TsParser;
 use std::fs;
 
-fn print_tree(node: tree_sitter::Node, indent: usize) {
-    let indent_str = " ".repeat(indent);
-    println!("{}{}", indent_str, node.kind());
+// fn print_tree(node: tree_sitter::Node, indent: usize) {
+//     let indent_str = " ".repeat(indent);
+//     println!("{}{}", indent_str, node.kind());
 
-    for i in 0..node.child_count() {
-        if let Some(child) = node.child(i) {
-            print_tree(child, indent + 2);
-        }
-    }
-}
+//     for i in 0..node.child_count() {
+//         if let Some(child) = node.child(i) {
+//             print_tree(child, indent + 2);
+//         }
+//     }
+// }
 
 fn main() {
     let mut ts = TsParser::new();
@@ -36,5 +36,15 @@ fn main() {
             f.end_line + 1,
             f.line_count
         );
+        println!("Complexity: {}", f.complexity);
+
+        if !f.contributions.is_empty() {
+            println!("Contributions:");
+            for c in &f.contributions {
+                println!(" + {} at line {} ({})", c.kind, c.line + 1, c.description);
+            }
+        }
     }
+
+    println!();
 }
