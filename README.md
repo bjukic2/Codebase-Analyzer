@@ -1,6 +1,6 @@
 # Codebase Analyzer - Rust CLI Tool
 
-This is a high-performance Rust-based code analysis tool designed to parse and analyze modern TypeScript codebases using Tree-Sitter. It extracts detailed information about functions, calculates complexity metrics, and provides insights commonly found in professional static analysis tools. The analyzer is built for speed, accuracy, and extensibility, ideal for developers who want deep insight into their code structure.
+This is a high-performance Rust-based code analysis tool designed to parse and analyze modern TypeScript (more in the future) codebases using Tree-Sitter. It extracts detailed information about functions, calculates complexity metrics, and provides insights commonly found in professional static analysis tools. The analyzer is built for speed, accuracy, and extensibility, ideal for developers who want deep insight into their code structure.
 
 ## Features
 
